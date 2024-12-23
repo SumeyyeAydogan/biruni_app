@@ -2,24 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:provider/provider.dart';
 
-import '../../product/constants/url_constants.dart';
 import '../../core/provider/webpage_state.dart';
 
-class UniversitemizSayfasi extends StatelessWidget {
-  final String sayfa;
+class Anasayfa extends StatelessWidget {
 
-  const UniversitemizSayfasi({Key? key, required this.sayfa}) : super(key: key);
+  const Anasayfa({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final webPageState = Provider.of<WebPageState>(context, listen: false);
-    final webUrl = _getWebUrl(sayfa);
+    final webUrl = _getWebUrl();
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(sayfa),
-      ),
-      body: Stack(
+    return Stack(
         children: [
           InAppWebView(
             initialUrlRequest: URLRequest(
@@ -53,23 +47,12 @@ class UniversitemizSayfasi extends StatelessWidget {
             },
           ),
         ],
-      ),
-    );
+      );
   }
 
-  String _getWebUrl(String sayfa) {
+  String _getWebUrl() {
     // Yönetim elemanına göre web URL'i oluşturma mantığı
-    switch (sayfa) {
-      case 'Tarihçe':
-        return UniversitemizUrlConstants.TARIHCE;
-      case 'Misyon-Vizyon':
-        return UniversitemizUrlConstants.MISYON_VIZYON;
-      case 'Aday Öğrenci':
-        return UniversitemizUrlConstants.ADAY_OGRENCI;
-      case 'Öğrenci Portalı':
-        return UniversitemizUrlConstants.OGRENCI_PORTALI;  
-      default:
-        return 'https://www.biruni.edu.tr'; // Varsayılan URL
-    }
+    // Örneğin:
+    return 'https://www.biruni.edu.tr';
   }
 }

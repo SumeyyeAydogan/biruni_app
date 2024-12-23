@@ -2,6 +2,7 @@ class UniversitemizUrlConstants {
   static const String TARIHCE = 'https://www.biruni.edu.tr/universitemiz/tarihce';
   static const String MISYON_VIZYON = 'https://www.biruni.edu.tr/universitemiz/misyon-vizyon';
   static const String ADAY_OGRENCI = 'https://aday.biruni.edu.tr/';
+  static const String OGRENCI_PORTALI = 'https://birperformans.biruni.edu.tr/Auth/Login?ReturnUrl=%2F';
 }
 
 class YonetimUrlConstants {
